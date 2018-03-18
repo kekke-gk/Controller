@@ -20,7 +20,7 @@
             bunruiB["SONY"]= new Array();
             bunruiB["Toshiba"]= new Array();
 
-            var socket = io.connect(IP_ADD+':3000');
+            var socket = io.connect('http://'+IP_ADD+':3000');
             var KeyState = new Array(244);
             var camerafb =0;
             var mode = true;
@@ -636,7 +636,7 @@
         setInterval("sendControl()",100);
         function sendControl(){
             if(initBool){
-                  document.getElementById("gazo").src = IP_ADD+":8495/?action=stream";
+                  document.getElementById("gazo").src = "http://"+IP_ADD+":8495/?action=stream";
                   initBool = false;
             }
             if(mode&&false){
